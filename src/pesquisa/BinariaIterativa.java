@@ -10,22 +10,28 @@ public class BinariaIterativa extends PesquisaBinaria{
 
 	@Override
 	public int pesquisar(List<String> lista, String conteudo) {
-		int inicio = 0;
-        int i = 0;
-        int fim = Integer.parseInt(conteudo) -1;
+		
+		Long[] numeros = new Long[lista.size()];
+		for (int i = 0; i < lista.size(); i++) {
+            numeros[i] = Long.parseLong(lista.get(i));
+        }
+		
+		int fim = lista.size()-1;
+		int meio = fim / 2;
+		int i = meio;
 
-        while(inicio <= fim) {
-            i = (inicio + fim) / 2;
-
-            if (lista.get(i).equals(conteudo)) {  
-                return i;
+        while(i <= fim) {
+                		
+        	if (numeros[i] == Long.parseLong(conteudo)) {  
+        		return i;
+        	}
+            
+            if(i == meio && Long.parseLong(conteudo) < numeros[meio]) {
+            	i = -1;
+            	fim = meio;
             }
-
-            if (!lista.get(i).equals(conteudo)) { 
-                inicio = i + 1;
-            } else {   
-                fim = i;
-            }
+            
+            i++;
         }
         return -1;
 	}
