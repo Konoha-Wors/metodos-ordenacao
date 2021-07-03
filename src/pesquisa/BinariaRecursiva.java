@@ -31,7 +31,7 @@ public class BinariaRecursiva extends PesquisaBinaria{
 		}
 
 		int meio = (esquerda + direita) / 2;
-		if (ind == A[meio]) {
+		if (ind.equals(A[meio])) {
 			return meio;
 		}
 

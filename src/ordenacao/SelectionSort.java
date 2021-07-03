@@ -13,7 +13,7 @@ public class SelectionSort extends Ordenacao{
 
 		Long[] numeros = new Long[listaOrdenacao.size()];
 		for (int i = 0; i < listaOrdenacao.size(); i++) {
-            numeros[i] = Long.parseLong(listaOrdenacao.get(i));
+			numeros[i] = Long.parseLong(listaOrdenacao.get(i));
         }
 
 		for (int i = 0; i < numeros.length - 1; i++) {

@@ -14,7 +14,7 @@ public class ShellSort extends Ordenacao {
 
 		Long[] arr = new Long[listaOrdenacao.size()];
 		for (int i = 0; i < listaOrdenacao.size(); i++) {
-		    arr[i] = Long.parseLong(listaOrdenacao.get(i));
+			arr[i] = Long.parseLong(listaOrdenacao.get(i));
 		}
 
 		while (intervalo > 0) {
