@@ -10,9 +10,9 @@ public class BinariaRecursiva extends PesquisaBinaria{
 
 	@Override
 	public int pesquisar(List<String> lista, String conteudo) {
-		int[] numeros = new int[lista.size()];
+		Long[] numeros = new Long[lista.size()];
 		for (int i = 0; i < lista.size(); i++) {
-            numeros[i] = Integer.parseInt(lista.get(i));
+            numeros[i] = Long.parseLong(lista.get(i));
         }
 
 		int esquerda = 0;
@@ -23,8 +23,8 @@ public class BinariaRecursiva extends PesquisaBinaria{
 		return indice;
 	}
 	
-	private static int binariaRecursiva(int[] A, int esquerda, int direita, String x) {
-		int ind = Integer.parseInt(x);
+	private static int binariaRecursiva(Long[] A, int esquerda, int direita, String x) {
+		Long ind = Long.parseLong(x);
 		
 		if (esquerda > direita) {
 			return -1;
