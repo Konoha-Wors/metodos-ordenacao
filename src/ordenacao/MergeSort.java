@@ -15,14 +15,14 @@ public class MergeSort extends Ordenacao {
 
 	public static List<String> mergeSort(List<String> listaOrdenacao) {
 
-		Integer[] listaInteira = new Integer[listaOrdenacao.size()];
+		Long[] listaInteira = new Long[listaOrdenacao.size()];
 		for (int i = 0; i < listaOrdenacao.size(); i++) {
-			listaInteira[i] = Integer.parseInt(listaOrdenacao.get(i));
+			listaInteira[i] = Long.parseLong(listaOrdenacao.get(i));
 		}
 
-		Integer[] lTemporario = new Integer[listaInteira.length];
+		Long[] lTemporario = new Long[listaInteira.length];
 
-		Integer[] listaOrdenada = mergeSortOrdem(listaInteira, lTemporario, 0, listaInteira.length - 1);
+		Long[] listaOrdenada = mergeSortOrdem(listaInteira, lTemporario, 0, listaInteira.length - 1);
 
 		listaOrdenacao.clear();
 		for (int i = 0; i < listaOrdenada.length; i++) {
@@ -32,7 +32,7 @@ public class MergeSort extends Ordenacao {
 		return listaOrdenacao;
 	}
 
-	private static Integer[] mergeSortOrdem(Integer[] listaInteira, Integer[] lTemporario, int esquerda, int direita) {
+	private static Long[] mergeSortOrdem(Long[] listaInteira, Long[] lTemporario, int esquerda, int direita) {
 		if (esquerda < direita) {
 			int centro = (esquerda + direita) / 2;
 			mergeSortOrdem(listaInteira, lTemporario, esquerda, centro);
@@ -42,7 +42,7 @@ public class MergeSort extends Ordenacao {
 		return listaInteira;
 	}
 
-	private static void merge(Integer[] listaInteira, Integer[] lTemporario, int posEsquerda, int posDireita, int fimDireita) {
+	private static void merge(Long[] listaInteira, Long[] lTemporario, int posEsquerda, int posDireita, int fimDireita) {
 		int fimEsquerda = posDireita - 1;
 		int tempPos = posEsquerda;
 		int num = fimDireita - posEsquerda + 1;

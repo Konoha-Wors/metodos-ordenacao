@@ -12,14 +12,14 @@ public class ShellSort extends Ordenacao {
 	public List<String> ordenar(List<String> listaOrdenacao) {
 		int intervalo = calcularIntervalo(listaOrdenacao.size());
 
-		int[] arr = new int[listaOrdenacao.size()];
+		Long[] arr = new Long[listaOrdenacao.size()];
 		for (int i = 0; i < listaOrdenacao.size(); i++) {
-		    arr[i] = Integer.parseInt(listaOrdenacao.get(i));
+		    arr[i] = Long.parseLong(listaOrdenacao.get(i));
 		}
 
 		while (intervalo > 0) {
 		    for (int externo = intervalo; externo < arr.length; externo++) {
-			int valor = arr[externo];
+			Long valor = arr[externo];
 			int interno = externo;
 			while (interno > intervalo - 1 && arr[interno - intervalo] >= valor) {
 			    arr[interno] = arr[interno - intervalo];

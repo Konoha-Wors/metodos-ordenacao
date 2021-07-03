@@ -11,11 +11,11 @@ public class InsertionSort extends Ordenacao {
 	@Override
 	public List<String> ordenar(List<String> listaOrdenacao) {
 	
-		int[] numeros = new int[listaOrdenacao.size()];
+		Long[] numeros = new Long[listaOrdenacao.size()];
 		boolean entrou = true;
 		
 		for (int i = 0; i < listaOrdenacao.size(); i++) {
-			numeros[i] = Integer.parseInt(listaOrdenacao.get(i));
+			numeros[i] = Long.parseLong(listaOrdenacao.get(i));
 		}
 		
 		for (int i = 1; i < numeros.length; i++) {
@@ -28,7 +28,7 @@ public class InsertionSort extends Ordenacao {
 
 				if (indice > 0) {
 					if (numeros[indice] < numeros[indice - 1]) {
-						int numTemp = numeros[indice];
+						Long numTemp = numeros[indice];
 						numeros[indice] = numeros[indice - 1];
 						numeros[indice-1] = numTemp;
 						entrou = true;

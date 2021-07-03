@@ -11,9 +11,9 @@ public class SelectionSort extends Ordenacao{
 	@Override
 	public List<String> ordenar(List<String> listaOrdenacao) {
 
-		int[] numeros = new int[listaOrdenacao.size()];
+		Long[] numeros = new Long[listaOrdenacao.size()];
 		for (int i = 0; i < listaOrdenacao.size(); i++) {
-            numeros[i] = Integer.parseInt(listaOrdenacao.get(i));
+            numeros[i] = Long.parseLong(listaOrdenacao.get(i));
         }
 
 		for (int i = 0; i < numeros.length - 1; i++) {
@@ -24,7 +24,7 @@ public class SelectionSort extends Ordenacao{
 				}
 			}
 
-			int temp = numeros[i];
+			Long temp = numeros[i];
 			numeros[i] = numeros[min];
 			numeros[min] = temp;
 		}

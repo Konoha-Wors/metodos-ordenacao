@@ -12,15 +12,15 @@ public class QuickSort extends Ordenacao{
 	@Override
 	public List<String> ordenar(List<String> listaOrdenacao) {
 		
-		List<Integer> listaInteira = new ArrayList<>();
+		List<Long> listaInteira = new ArrayList<>();
 		for (String umItem : listaOrdenacao) {
-			listaInteira.add(Integer.parseInt(umItem));
+			listaInteira.add(Long.parseLong(umItem));
 		}
 		
 		Integer fim = listaInteira.size()-1;
 		Integer inicio = 0;
 		
-		List<Integer> listaResul = quick(listaInteira, inicio, fim);
+		List<Long> listaResul = quick(listaInteira, inicio, fim);
 		
 		listaOrdenacao.clear();
         for (int i = 0; i < listaResul.size(); i++) {
@@ -30,7 +30,7 @@ public class QuickSort extends Ordenacao{
 		return listaOrdenacao;
 	}
 	
-	private static List<Integer> quick(List<Integer> listaInteira, Integer inicio, Integer fim) {
+	private static List<Long> quick(List<Long> listaInteira, Integer inicio, Integer fim) {
 		if (inicio < fim) {
 			Integer posPivo = rodadaQuick(listaInteira, inicio, fim);
 			quick(listaInteira, inicio, posPivo-1);
@@ -39,9 +39,9 @@ public class QuickSort extends Ordenacao{
 		return listaInteira;
 	}
 	
-	private static Integer rodadaQuick(List<Integer> listaInteira, Integer inicio, Integer fim){
+	private static Integer rodadaQuick(List<Long> listaInteira, Integer inicio, Integer fim){
 		
-		Integer pivo = listaInteira.get(inicio);
+		Long pivo = listaInteira.get(inicio);
 		Integer ini = inicio + 1;
 		Integer f = fim;
 		
@@ -52,7 +52,7 @@ public class QuickSort extends Ordenacao{
 			}else if(pivo < listaInteira.get(f)) {
 				f--;
 			}else {
-				Integer temp = listaInteira.get(ini);
+				Long temp = listaInteira.get(ini);
 				listaInteira.set(ini, listaInteira.get(f));
 				listaInteira.set(f, temp);
 				ini++;
