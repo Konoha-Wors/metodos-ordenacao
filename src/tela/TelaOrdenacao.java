@@ -91,9 +91,9 @@ public class TelaOrdenacao extends JFrame{
 			@Override
 			public void componentResized(ComponentEvent e) {
 				cbTipoPesquisa.addItem("");
-				cbTipoPesquisa.addItem("Binaria Iterativa");
-				cbTipoPesquisa.addItem("Binaria Recursiva");
-				cbTipoPesquisa.addItem("Pesquisa Linear");
+				cbTipoPesquisa.addItem("Binaria Iterativa (Num)");
+				cbTipoPesquisa.addItem("Binaria Recursiva (Num)");
+				cbTipoPesquisa.addItem("Pesquisa Linear (Alf)");
 			}
 		});
 		cbTipoPesquisa.setBounds(567, 71, 157, 22);
@@ -159,7 +159,7 @@ public class TelaOrdenacao extends JFrame{
 				cbTipoOrdenacao.addItem("Selection Sort");
 				cbTipoOrdenacao.addItem("Quick Sort");
 				cbTipoOrdenacao.addItem("Merge Sort");
-				cbTipoOrdenacao.addItem("Sell Sort");
+				cbTipoOrdenacao.addItem("Shell Sort");
 			}
 		});
 		cbTipoOrdenacao.setBounds(119, 39, 164, 22);
@@ -175,7 +175,6 @@ public class TelaOrdenacao extends JFrame{
 					if(tipoOrd != -1 && tipoOrd != 0) {
 						Dado dado = new Dado();
 						List<String> listaExibicao = dado.listarDadosArquivo(tfUrl.getText());
-						lConteudo.setListData(listaExibicao.toArray());
 						switch (tipoOrd) {
 						case 1: {
 							dado.setOrdenacao(new InsertionSort(tipoOrd, cbTipoPesquisa.getSelectedItem().toString()));
@@ -200,6 +199,8 @@ public class TelaOrdenacao extends JFrame{
 						default:
 							throw new Exception();
 						}
+						List<String> listaOrd = dado.ordenar(listaExibicao);
+						lConteudo.setListData(listaOrd.toArray());
 						int tempo = dado.getResultado().getTempoExecucao();
 						tfTempo.setText(String.valueOf(tempo)+" ns");
 						tfStatus.setBackground(Color.GREEN);
