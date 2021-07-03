@@ -72,11 +72,13 @@ public class Dado {
 	 * @param lista
 	 * @return lista Ordenada 
 	 */
-	public List<String> ordenar(List<String> lista){
+	public List<String> ordenar(List<String> lista, String caminho){
 		
 		LocalTime inicioTempo = LocalTime.now();
 		
 		List<String> listaOrdenada = ordenacao.ordenar(lista);
+		Arquivo arquivoGravacao = new Arquivo(caminho);
+		arquivoGravacao.escreverArquivo(listaOrdenada);
 		 
 		LocalTime finalTempo = LocalTime.now();
 		Resultado resultado = new Resultado(finalTempo.getNano()-inicioTempo.getNano());

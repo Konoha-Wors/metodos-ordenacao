@@ -199,7 +199,7 @@ public class TelaOrdenacao extends JFrame{
 						default:
 							throw new Exception();
 						}
-						List<String> listaOrd = dado.ordenar(listaExibicao);
+						List<String> listaOrd = dado.ordenar(listaExibicao, tfUrl.getText());
 						lConteudo.setListData(listaOrd.toArray());
 						int tempo = dado.getResultado().getTempoExecucao();
 						tfTempo.setText(String.valueOf(tempo)+" ns");

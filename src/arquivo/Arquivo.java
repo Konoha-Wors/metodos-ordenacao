@@ -63,7 +63,7 @@ public class Arquivo {
 		BufferedWriter file = abrirArquivoEscrita();
 		try {
 			for (int i = 0; i < lnumeros.size(); i++) {
-				file.append(lnumeros.get(i));
+				file.append(lnumeros.get(i)+"\n");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
