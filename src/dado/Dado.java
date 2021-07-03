@@ -58,7 +58,7 @@ public class Dado {
 		List<String> lResultado = arquivo.lerArquivo();
 		
 		LocalTime finalTempo = LocalTime.now();
-		Resultado resultado = new Resultado(finalTempo.getNano()-inicioTempo.getNano());
+		Resultado resultado = new Resultado(finalTempo.getSecond()-inicioTempo.getSecond());
 		setResultado(resultado);
 		
 		return lResultado;
@@ -81,7 +81,7 @@ public class Dado {
 		arquivoGravacao.escreverArquivo(listaOrdenada);
 		 
 		LocalTime finalTempo = LocalTime.now();
-		Resultado resultado = new Resultado(finalTempo.getNano()-inicioTempo.getNano());
+		Resultado resultado = new Resultado(finalTempo.getSecond()-inicioTempo.getSecond());
 		setResultado(resultado);
 		
 		return listaOrdenada;
@@ -103,7 +103,7 @@ public class Dado {
 		int indice = pesquisa.pesquisar(lista, conteudo);
 		
 		LocalTime finalTempo = LocalTime.now();
-		Resultado resultado = new Resultado(finalTempo.getNano()-inicioTempo.getNano());
+		Resultado resultado = new Resultado(finalTempo.getSecond()-inicioTempo.getSecond());
 		setResultado(resultado);
 		
 		return indice;

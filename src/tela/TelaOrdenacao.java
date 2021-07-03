@@ -135,7 +135,7 @@ public class TelaOrdenacao extends JFrame{
 							tfIndiceBusca.setText("NENHUM");
 						}
 						int tempo = dado.getResultado().getTempoExecucao();
-						tfTempo.setText(String.valueOf(tempo)+" ns");
+						tfTempo.setText(String.valueOf(tempo)+" seg");
 						tfStatus.setBackground(Color.GREEN);
 						tfStatus.setText("OK");
 					}else {
@@ -202,7 +202,7 @@ public class TelaOrdenacao extends JFrame{
 						List<String> listaOrd = dado.ordenar(listaExibicao, tfUrl.getText());
 						lConteudo.setListData(listaOrd.toArray());
 						int tempo = dado.getResultado().getTempoExecucao();
-						tfTempo.setText(String.valueOf(tempo)+" ns");
+						tfTempo.setText(String.valueOf(tempo)+" seg");
 						tfStatus.setBackground(Color.GREEN);
 						tfStatus.setText("OK");
 					}else {
@@ -272,7 +272,7 @@ public class TelaOrdenacao extends JFrame{
 					List<String> lista = dado.listarDadosArquivo(tfUrl.getText());
 					lConteudo.setListData(lista.toArray());
 					int tempo = dado.getResultado().getTempoExecucao();
-					tfTempo.setText(String.valueOf(tempo)+" ns");
+					tfTempo.setText(String.valueOf(tempo)+" seg");
 					tfStatus.setBackground(Color.GREEN);
 					tfStatus.setText("OK");
 				} catch (Exception e2) {
