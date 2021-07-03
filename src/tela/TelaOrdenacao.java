@@ -22,6 +22,7 @@ import ordenacao.InsertionSort;
 import ordenacao.MergeSort;
 import ordenacao.QuickSort;
 import ordenacao.SelectionSort;
+import ordenacao.ShellSort;
 import pesquisa.BinariaIterativa;
 import pesquisa.BinariaRecursiva;
 import pesquisa.PesquisaLinear;
@@ -193,7 +194,7 @@ public class TelaOrdenacao extends JFrame{
 							break;
 						}
 						case 5: {
-							dado.setOrdenacao(new SellSort(tipoOrd, cbTipoPesquisa.getSelectedItem().toString()));
+							dado.setOrdenacao(new ShellSort(tipoOrd, cbTipoPesquisa.getSelectedItem().toString()));
 							break;
 						}
 						default:

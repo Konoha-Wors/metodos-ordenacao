@@ -4,7 +4,7 @@ import java.util.List;
 
 public class SelectionSort extends Ordenacao{
 
-	protected SelectionSort(int id, String nome) {
+	public SelectionSort(int id, String nome) {
 		super(id, nome);
 	}
 
