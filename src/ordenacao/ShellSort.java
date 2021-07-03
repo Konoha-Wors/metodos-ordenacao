@@ -37,7 +37,7 @@ public class ShellSort extends Ordenacao {
 
 		return listaOrdenacao;
 	}
-	private int calcularIntervalo(int comprimento) {
+	private static int calcularIntervalo(int comprimento) {
 		int intervalo = 0;
 		while (intervalo < comprimento / 3) {
 		    intervalo = intervalo * 3 + 1;
